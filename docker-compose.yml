@@ -9,7 +9,7 @@ services:
     build: 
       context: ./gregister
     volumes:
-      - ./register/data:/go/src/github.com/wuzhc/gregister/build/data
+      - ./data/gregister:/data
     ports:
       - "9595:9595"
     networks:
@@ -21,7 +21,7 @@ services:
       - "9503:9503"
       - "9504:9504"
     volumes:
-      - ./gnode-1/data:/go/src/github.com/wuzhc/gnode/build/data
+      - ./data/gnode-1:/data
     depends_on:
       - register
     networks:
@@ -33,7 +33,7 @@ services:
       - "9505:9505"
       - "9506:9506"
     volumes:
-      - ./gnode-2/data:/go/src/github.com/wuzhc/gnode/build/data
+      - ./data/gnode-2:/data
     depends_on:
       - register
     networks:
@@ -45,7 +45,7 @@ services:
       - "9507:9507"
       - "9508:9508"
     volumes:
-      - ./gnode-3/data:/go/src/github.com/wuzhc/gnode/build/data
+      - ./data/gnode-3:/data
     depends_on:
       - register
     networks:
@@ -57,7 +57,7 @@ services:
       - "9509:9509"
       - "9510:9510"
     volumes:
-      - ./gnode-4/data:/go/src/github.com/wuzhc/gnode/build/data
+      - ./data/gnode-4:/data
     depends_on:
       - register
     networks:
